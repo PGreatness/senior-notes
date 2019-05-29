@@ -1,0 +1,31 @@
+Shading
+=======
+* How frequently we calculate the color (I)
+
+Flat Shading (current model)
+----------------------------
+* Calculate I once per polygon
+
+Gouraud Shading
+---------------
+(( Looks slightly like clay in a dimly lit room, kinda runny ))
+* Looks at 3 different vectors, we'll talk about how to get them later
+* It looks at the vertex normal
+* Calculate the color at each vertex
+1. Calculate a normal for each vertex
+2. Calculate I for each vertex
+3. Interpolate I while drawing scanlines
+		^ I_T
+	       / \
+	 I_1  /...\ I_0
+	     /     \
+        I_M  ------- I_B
+
+Phong Shading
+-------------
+(( Very realistic, but looks like everything is wet ))
+
+* Calculate a normal for each vertex
+* Interpolate the normal while drawing scanlines
+* Calculate I once per pexel with the interpolated pixel
+
