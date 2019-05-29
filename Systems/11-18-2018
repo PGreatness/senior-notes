@@ -1,0 +1,32 @@
+Consider a program that uses pipes in order to communicate between 2 
+seperate executable files. One file is a "server" that is always running.
+The other is a "client"
+
+Handshake
+A procedure to ensure that a connection has been established between 2 programs.
+Both ends of the connection must verify that they can send and receive 
+data to and from each other. 
+
+3 way handshake
+	Client sends a message to the server.
+	Server sends a response to the client.
+	Client sends a response back to server.
+
+Basic server/client design pattern
+1. Setup
+	1.1 Server creates a FIFO (Well Known Pipe) and waits for a connection.
+	1.2 Client creates a "private" FIFO.
+2. Handshake
+	2.1 Client connects to server and sends the private FIFO name. Client
+	    waits for a response from the server.
+	2.2 Server receives client's message and removes the WKP.
+	2.3 Server connects to client FIFO, sending an initial acknowledgement
+	    message.
+	2.4 Client receives server's message, removes its private FIFO.
+	2.5 Client sends response to server.
+3. Operation
+	Server and client send info back and forth.
+4. Reset
+	4.1 Client exits, server closes any connection to the client.
+	4.2 Server recreates the WKP and waits for another client.
+

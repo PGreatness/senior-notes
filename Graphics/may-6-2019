@@ -1,0 +1,30 @@
+Compilers
+
+Source code ---(compiler)---> Machine code
+Source code ---(compiler)---> Image(s)
+
+Code goes through the lexer
+Then goes through the semantic analyzer
+Then goes through the parser
+Then goes through the optimizer
+Then goes through the code generator
+
+Lexer--> Parser--> Semantic Analyzer--> Optimizer--> Code Generator
+
+Code generator gives the output
+
+Lexer
+-----
+
+Input: Source Code
+Output: Token List
+Performs lexical analysis
+Check the source code for valid "words"(tokens)
+Lexer must know the main types of tokens
+	* Keywords of a language (if, for, def, ...)
+	* Operators (+, -, *, /, AND, ., ->, ...)
+	* Comments
+	* Grouping/Formatting (;, {, (, TAB, ...)
+	* Literals (NUMBERS, STRINGS, ...)
+	* Identifiers (VARIABLES, FUNCTIONS, CLASSES, ...)
+

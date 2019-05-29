@@ -1,0 +1,16 @@
+y rotation
+[ cos(phi) 0 sin(phi)
+0 1 0
+-sin(phi) 0 cos(phi) ]
+
+this gets multed by:
+[ rcos(t) + R
+rsin(t)
+0 ]
+
+gives 
+
+cos(phi)(rcos(t) + R) + Cx
+rsin(t) + Cy
+-sin(phi)(rcos(t) + R) + Cz
+

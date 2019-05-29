@@ -1,0 +1,54 @@
+Python animation maker runs slow compared to C.
+
+Options
+=======
+There is an animate command from ImageMagick
+	animate anim/file_500*
+
+Use convert
+	convert anim/file_500* file.gif
+
+To animate or convert, there is an option called delay:
+-delay N
+ * delay between frames in 1/100s of a second
+ * FPS = 100/N
+ * convert -delay 1.7 anim/file_500* file.gif
+
+Animation in MDL
+----------------
+* New Commands: FRAMES, BASENAME, VARY
+* New Optional Argument: KNOB(variable) name for transformations
+	- If KNOB is present, look up value in Symbol Table and apply it
+* We will go through our operation list 3x
+
+* Pass 1: Setup
+	- Look for & set FRAMES
+	- Look for & set BASENAME
+		~ Use a default if necessary
+	- Look for vary
+		~ Exit if VARY found but FRAMES not set
+* Pass 2: Vary
+	- Symbol Table only holds 1 value
+	- Build a table of KNOB values arranged by FRAME
+	- Example
+		~ vary k 0 10 0 1 --> increment by 1/10
+		~ vary x 3  6 1 0 --> decrement by 
+		
+	   Frames  Knobs
+		0[ ] K: 0
+		1[ ] K: 0.1
+		2[ ] K: 0.2
+		3[ ] K: 0.3
+		4[ ] ..
+		5[ ] ..
+		6[ ] ..
+		7[ ] ..
+		8[ ] ..
+		9[ ] ..
+	       10[ ] K: 1.0
+* Pass 3: Draw
+	- Normal Drawing Loop
+		~ Loop over the # of FRAMES
+		~ Before you draw, set KNOB values in symbol table based on 
+		  the table from Pass 2
+		

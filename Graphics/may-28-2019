@@ -1,0 +1,39 @@
+Implement some new features for the final project.
+
+Add Existing MDL Commands
+-------------------------
+
+* Light
+  - Define the color & location of a point light source
+  - loop through all lights when calculating spec. & diff. reflection
+
+* Mesh
+  - import polygons by parsing an external .obj file
+
+* Shading
+  - Change how frequently we calculate I
+
+* Set
+  - Assign a knob a value
+
+* Setknobs
+  - Set all knobs to a value
+
+* Save_coordinate_system
+  - Save the current top of the stack to a matrix in the symbol table
+  - Only useful if you implement the coordinate system argument when 
+  drawing shapes
+
+* Save_knobs
+  - Save all current knob values to a list
+	  A
+	  |
+* Tween --|
+  - Generate an animation by changing knob values between 2 knob lists
+
+Add New MDL Commands
+--------------------
+
+* Add new shapes
+
+* Texture mapping

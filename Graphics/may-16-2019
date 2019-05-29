@@ -1,0 +1,10 @@
+Commands
+---------
+
+frames N
+	Sets the number of Frames
+basname S
+	Sets the basename for all frame files			* range of animation
+vary knob start_frame end_frame start_value end_value		* range of variance
+
+e = execlp("convert", "convert", "-delay", "1.7", name_arg, name, NULL);

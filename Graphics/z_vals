@@ -1,0 +1,14 @@
+z: z0 -> z1; z+= z1 - z0
+# of pixels
+( delta x if -1 < slope < 1)[D 
+or
+| delta y |
+nvm, delta X + 1
+
+
+Another place where we have to calculate z-vals except for draw_lines is scanline conversion
+
+                 /\
+(x1, y1, z1)    /  \ (x2, y2, z2)
+               /    \
+               ------

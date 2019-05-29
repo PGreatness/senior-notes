@@ -1,0 +1,35 @@
+Compiler
+
+Lexer-> Parser-> Semantic Analyzer-> Optimizer-> Code Generator
+
+Lexer (cont'd)
+--------------
+Source code ----(lexer)---> Token List
+
+if ) < 10 x (
+ / / /  /  / /
+V V V  V  V V
+All valid
+
+Source:					Token List:
+					int -- Keyword
+int main() {				main -- ID
+	long x = 5;			( -- Grouper
+	printf("%d", x);		) -- Grouper
+	return x;			{ -- Grouper
+}					long -- keyword
+					x -- ID
+					= -- Operator
+					5 -- value
+					....
+
+Regular Expressions
+[a-zA-Z][a-zA-Z0-9_]*   <---- Regex
+
+Regex   b    ba    [ba]      a-z	    [ba]t	b*		\	?	[0-9]   +
+------------------------------------------------------------------------------------------------
+Matches b    ba    b or a    any letter	    bt or at    0 or more	Escape	0 or 1  digit   1 or more
+      X ba X bab	     between a			b
+			     and z			bbb
+							bbbbbbb
+[] matches a single character

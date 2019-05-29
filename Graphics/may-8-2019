@@ -1,0 +1,45 @@
+Parser
+-------
+* Performs syntax (structural) analysis
+* Compares the token list against the grammar of the language
+* Language structure can be defined as a context-free grammar
+					 ====================
+* Token List ----> Syntax Tree
+
+int main() {
+	long x = 5 + 6;
+	printf("%d", x);
+	return x;
+}
+	|	|
+	|	|
+	|	|
+	V	V
+
+	Syntax Tree
+	int main
+        /   |   \
+       =  printf return
+      / \    /  \    \
+ long x  + "%d"  x    x
+	/ \
+       5   6
+
+
+Semantic Analyzer
+------------------
+* Provides "meaning" to the code in the syntax tree
+* Evaluates the syntax tree to create 
+	- Ordered list of instructions
+	- Symbol table
+		~ Hash table of Identifiers and associated values
+	
+
+
+==============================================================================
+  0	0	0			0 v
+ /|\  |_|_|	|\		    >---|--
+  |	|	---	   \		|
+ / \   / \	  |	>----0	       / \
+			   /
+==============================================================================

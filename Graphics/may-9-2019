@@ -1,0 +1,24 @@
+Semantic Analyzer 
+----------------- 
+Syntax Tree --------> * Operations List
+		      * Symbol Table
+
+Operations	         Symbols
+----------	         -------- ­
+main			main int function _____
++: 5,6			
+      ^
+=: x,_|			x long value _____
+printf: "%d", x		printf int int function _____
+return: x
+
+Optimizer
+---------
+Operations List --------------> Operations List*
+Symbol Table			Symbol Table*
+
+*May not be the same operations list and symbol table as you put in
+
+* Optimizer CAN modify the operations list & symbol table for efficiency
+
+* Optimizer can completely change your code

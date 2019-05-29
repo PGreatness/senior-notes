@@ -1,0 +1,18 @@
+I = Ambient + Diffuse + Specular
+
+Diffuse = AK(a) + I(p)K(d)(N_hat * L_hat)
+
+Specular:
+               Eye
+\ L   R /     /
+ \     /    /
+  \   /   /
+   \ /  /
+    V0/
+-----------------
+0 = theta
+
+What you see depends on where you are
+Dies very quickly
+Need to know where the viewer is
+

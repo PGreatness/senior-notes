@@ -1,0 +1,26 @@
+Named pipe
+mkfifo wario does cool thing -> makes named pipe
+doesn't store any data, only transfers
+cat wario
+cat > wario --> none live streaming of pipe
+as soon as you close all readers, the write doesn't do anything and ends
+named pipes can be deleted and still work
+
+Named Pipes
+Also known as FIFOs.
+Same as unnamed pipes.
+Do `mkfifo <name>`
+
+mkfifo - <sys/types.h> <sys/stat.h>
+C function to create a FIFO
+Returns 0 on sucess and -1 on failure
+
+Once open, works like normal file
+
+FIFOs will block on open until both sides have a connection
+
+mkfifo( name, permissions )
+
+WARNING:
+Read/Write opens both ends of the pipe simultaniously and closes the pipe.
+
