@@ -29,3 +29,5 @@ Phong Shading
 * Interpolate the normal while drawing scanlines
 * Calculate I once per pexel with the interpolated pixel
 
+* Vertex normal is the average of all the normals of the faces that share
+that vertex
