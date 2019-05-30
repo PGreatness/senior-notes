@@ -1,0 +1,15 @@
+Vertex Normals
+--------------
+* Used in Gouraud & Phong Shading
+* NOT used for backface culling
+* Vertex Normal (-Nv->) is the sum of the Surface Normals (-Ns->) for
+all polygons that share a vertex
+
+(( Maybe [x for x in point_list if vertex in x] ))
+
+* -Nv-> = -Nsa-> + -Nsb-> + -Nsc-> + -Nsd-> + -Nse->
+* Once all -Nv-> have been calculated, normalize them
+* We can use a hash table t ostore the -Nv->
+	- Vertex: -Nv->
+	  (x,y,z): <x,y,z>
+* Be careful with floating points
